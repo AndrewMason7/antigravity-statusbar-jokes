@@ -424,7 +424,10 @@ if [ "$STATE" != "idle" ]; then
   )
   INDEX=$((RANDOM % ${#JOKES[@]}))
   SELECTED_JOKE="${JOKES[$INDEX]}"
-  JOKE="${FG_GRAY} ╱ ${D}${I}${SELECTED_JOKE}${R}"
+  FG_PINK="\033[38;2;255;105;180m"
+  JOKE="${FG_GRAY} ╱ ${FG_PINK}${I}${SELECTED_JOKE}${R}"
+else
+  JOKE="${FG_GRAY} ╱ ${D}✨${R}"
 fi
 
 # ─── State Indicator (No background colors) ──────────────────────────────────
